@@ -160,6 +160,7 @@ Thumbs.db #thumbnail cache on Windows
 
 filename.*/
 
+# Nuitka Folder
 PatsPedsClaims.*/
 PatsPedsFileWrapper.*/
 
