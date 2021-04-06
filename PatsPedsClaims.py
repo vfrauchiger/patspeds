@@ -18,7 +18,7 @@ import win32gui, win32con, os
 #print(os.environ)
 
 def get_claims(applId):
-    """This function takes an application ID of an US Patent Application saves a pdf with the 12555321
+    """This function takes an application ID of an US Patent Application saves a pdf with the
     latest version of the claims to disk and return "Finished!" in case success.
     applId : 12123456
     """
