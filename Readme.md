@@ -1,10 +1,10 @@
-## Description of PatsPedsClaims (Wrapper) ##
+## Description of PatsPedsTools (Wrapper) ##
 
 ### Functions ###
 
 - Download latest version of claims available at the USPTO
 - Discriminate between US application numbers, publication number, and patent numbers
-- If wanted save whole filewrapper
+- If wanted: save whole filewrapper
 
 *PatsPedsClaims.py*
 Takes an application Id
