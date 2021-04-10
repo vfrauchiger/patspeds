@@ -16,6 +16,9 @@ Takes  a pre-grant publication or patent number. Morover this script uses **Pats
 *PatsPedsFileWrapper.py*
 Takes an application Id and downloads the whole filewrapper for the application. 
 
+*PatsPedsGUI.py*
+Is a very simple GUI for the tools.
+
 April 10, 2021  
 
 (c) Vinz Frauchiger
