@@ -78,8 +78,9 @@ def get_appl(no):
                 }
     response = requests.post(url, json=payload)
     applId = json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]['applId']
+    print('The application ID of the searched publication or patent number: {} \n'.format(applId))
     pdc.get_claims(applId)
-    return 0
+    return 1
 
 if __name__== "__main__":
     
