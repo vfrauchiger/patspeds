@@ -8,6 +8,11 @@ import requests
 import json
 import os
 
+import PySimpleGUI as sg 
+
+sg.theme('Dark Blue 2')
+
+
 
 def get_filewrapper(applId_tosearch):
     """This function takes an  application ID of an US Patent
@@ -18,6 +23,9 @@ def get_filewrapper(applId_tosearch):
     number. 
     Format: '121234567'"""
 
+    # Choose location for filewrapper to be saved
+    location = sg.popup_get_folder('Please choose location to save the filewrapper:')
+    
     #base url
     url_l = "https://ped.uspto.gov/api/queries/cms/"
 
@@ -33,7 +41,7 @@ def get_filewrapper(applId_tosearch):
 
     #create a directory in the current location named the appl. number
     try:
-        os.mkdir(str(applId))
+        os.mkdir(location+ '/'+ str(applId))
     except FileExistsError:
         print('Directory exists already!\n')
 
@@ -44,7 +52,7 @@ def get_filewrapper(applId_tosearch):
         if  doc['pdfUrl'] != None:
             print(doc['pdfUrl'])
             #create filename incl. path from ./
-            filename = os.curdir+'/'+ str(applId)+ '/' \
+            filename = location +'/'+ str(applId)+ '/' \
                     + str(doc["mailRoomDate"])[-4:]+'-'+str(doc["mailRoomDate"])[:2] \
                     +str(doc["mailRoomDate"])[2:-5] \
                     +"_"+str(doc["documentDescription"]).\

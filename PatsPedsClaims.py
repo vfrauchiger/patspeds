@@ -13,11 +13,11 @@ import base64
 
 import win32gui, win32con, os
 
-
+import PySimpleGUI as sg
 
 #print(os.environ)
 
-def get_claims(applId):
+def get_claims(applId, publno="NoNo"):
     """This function takes an application ID of an US Patent Application saves a pdf with the
     latest version of the claims to disk and return "Finished!" in case success.
     applId : 12123456
@@ -46,22 +46,15 @@ def get_claims(applId):
     r3 = requests.get(url_l + '/' + last_claims[0]['pdfUrl'])
     #save the claims to file
 
-    
-    filewopath = str(last_claims[0]['mailRoomDate'].strftime('%Y_%m_%d') +'_'+applId +'_claims.pdf')
+    if publno == "NoNo":
+        filewopath = str(last_claims[0]['mailRoomDate'].strftime('%Y_%m_%d') +'_'+applId + '_claims.pdf')
+    else:
+        filewopath = str(last_claims[0]['mailRoomDate'].strftime('%Y_%m_%d') +'_'+applId + '_US'+publno+'_claims.pdf')
     print(filewopath)
 
+    location = sg.popup_get_folder('Please choose location to save the claims:')
 
-    filter='Acrobat files\0*.pdf\0Otherfiles\0*.*'
-    customfilter='Other file types\0*.*'
-    filename, customfilter, flags=win32gui.GetSaveFileNameW(
-        InitialDir=os.environ['userprofile'],
-        Flags=win32con.OFN_EXPLORER,
-        MaxFile = 1300,
-        File=str(filewopath), DefExt='pdf',
-        Title='Bitte Ordner und Dateiname wählen',
-        Filter=filter,
-        CustomFilter=customfilter,
-        FilterIndex=0)
+    filename = location + '/' + filewopath
 
 
     
