@@ -9,7 +9,9 @@ import json
 
 import PatsPedsClaims as pdc
 
-def get_appl(no):
+
+
+def get_appl(no, go_back='full'):
     """takes a publication number or a patent number and checks its application number at PEDS.
     Return the application number as string
     
@@ -77,10 +79,31 @@ def get_appl(no):
                 "start":"0"\
                 }
     response = requests.post(url, json=payload)
+    doc_text =json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]
+    print(doc_text)
+    total_delay = '0'
+    try: 
+        total_delay = json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]['totalPtoDays']
+        print(total_delay)
+        transactions =json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]['transactions']
+        disclaimer = False
+        for element in transactions:
+            if element['code'] == "DIST":
+                print(element)
+                disclaimer = True
+        if disclaimer == False:
+            print('No Terminal Disclaimer Found!')
+        if go_back =='delay':
+            return total_delay, disclaimer
+        else:
+            pass
+    except:
+        pass
+    
     applId = json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]['applId']
     print('The application ID of the searched publication or patent number: {} \n'.format(applId))
     pdc.get_claims(applId, str(number))
-    return 1
+    return total_delay
 
 if __name__== "__main__":
     
@@ -90,4 +113,3 @@ if __name__== "__main__":
     while status == 1:
         no = str(input('Please enter *US* publ. or patent number: '))
         status = get_appl(no)
-
