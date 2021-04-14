@@ -23,25 +23,30 @@ def get_appl(no, go_back='full'):
     """
 
 
-    number = str(no)
-
+    number = str(no).strip()
+    # if no number is provided the function is exited with code 0
     if no == '':
         return 0
 
+    #remove Country Code
     if number[:2].upper() == 'US':
         number = number[2:]
     elif number[0].isdigit():
         pass
     else:
         print('this is not a US number!')
+        #exit function with code 1
         return 1
     print('With removed CC: {}'.format(number))
     
+    #remove Kind Code
     if number[-2].isalpha():
         number= number[:-2]
     else:
         pass
-
+    
+    #remove whitespace
+    number = number.strip()
     print('With removed KD: {}'.format(number))
 
     number = number.replace('/', '').replace(' ', '')
@@ -83,17 +88,24 @@ def get_appl(no, go_back='full'):
     print(doc_text)
     total_delay = '0'
     try: 
+        # Get Patent Term Extension in Days
         total_delay = json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]['totalPtoDays']
-        print(total_delay)
+        print("The Patent Term Extension [d]: {}".format(total_delay))
+        
+        # Get all transaction from within the file
         transactions =json.loads(response.text)["queryResults"]['searchResponse']['response']['docs'][0]['transactions']
+        # Disclaimer is set to False as long no Terminal Disclaimed is found
         disclaimer = False
+        # iterate through all transactions
         for element in transactions:
             if element['code'] == "DIST":
                 print(element)
+                # as a Terminal Disclaimer is found the Value is set to True
                 disclaimer = True
         if disclaimer == False:
             print('No Terminal Disclaimer Found!')
         if go_back =='delay':
+            # if only extension and disclaimer are requested, the function is exited with return values
             return total_delay, disclaimer
         else:
             pass
