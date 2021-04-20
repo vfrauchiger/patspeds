@@ -1,5 +1,7 @@
 """
 Wrapper and helper for PatsPedsClaims
+
+Takes Publication Numbers. 
 """
 
 
