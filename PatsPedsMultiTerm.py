@@ -10,11 +10,13 @@ def multi_term_disc(list_of_publnos):
 
     
     print(output)
-    return 0
+    return output
 
 
 
 
 if __name__ == "__main__":
     liste =["US6542343","US8883241","US7896841","US8883243", "US8883247"]
+
+
     multi_term_disc(liste)
