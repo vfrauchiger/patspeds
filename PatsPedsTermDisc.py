@@ -41,7 +41,7 @@ def terms_and_disclaimer(no):
                 disclaimer = True
             else:
                 continue
-        if disclaimer == False:
+        if not disclaimer:
             print('No Terminal Disclaimer Found!')
         
         return total_delay, disclaimer

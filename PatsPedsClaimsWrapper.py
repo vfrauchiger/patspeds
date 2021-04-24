@@ -104,7 +104,7 @@ def get_appl(no, go_back='full'):
                 print(element)
                 # as a Terminal Disclaimer is found the Value is set to True
                 disclaimer = True
-        if disclaimer == False:
+        if not disclaimer:
             print('No Terminal Disclaimer Found!')
         if go_back =='delay':
             # if only extension and disclaimer are requested, the function is exited with return values

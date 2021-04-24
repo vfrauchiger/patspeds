@@ -49,7 +49,7 @@ def get_filewrapper(applId_tosearch):
     for doc in resp_l:
         # create filename for each file
         print(doc['pdfUrl'])
-        if  doc['pdfUrl'] != None:
+        if doc['pdfUrl'] is not None:
             print(doc['pdfUrl'])
             #create filename incl. path from ./
             filename = location +'/'+ str(applId)+ '/' \
