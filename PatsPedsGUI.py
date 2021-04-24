@@ -4,7 +4,7 @@ import PatsPedsClaims as pdc
 import PatsPedsClaimsWrapper as pdw 
 import PatsPedsFileWrapper as pdf 
 
-sg.theme('Dark Blue 2')
+sg.theme('Dark Red 2')
 
 layout = [[sg.Text('Application ID'), sg.InputText(), sg.Button('Filewrapper (A)'), sg.Button('Latest Claims (A)')], \
             [sg.Text('Pre-Grant PublNo or Patent No'), sg.InputText(), sg.Button('Latest Claims (P)'), sg.Button('Get Term Extension (P)')], \

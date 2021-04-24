@@ -4,16 +4,14 @@
 # Author: Vinz Frauchiger
 # License: Ypsomed exclusive
 
+
 # imports
-import json
-import requests
 import datetime
+import json
 import time
-import base64
-
-import win32gui, win32con, os
-
 import PySimpleGUI as sg
+import requests
+
 
 #print(os.environ)
 
