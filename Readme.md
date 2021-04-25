@@ -4,6 +4,8 @@
 
 _PatsPedsGUI.py_: **Top Level App with GUI** for *all* tools
 
+
+
 _PatsPedsClaims.py_: Takes an appl. Id and download the latest claims (cli)
 
 _PatsPedsClaimsWrapper.py_: Takes a pre-grant publication number or a patent number and 
@@ -13,31 +15,30 @@ disclaimer (True or False)
 
 _PatsPedsFileWrapper.py_: Takes an application ID and download the **full file wrapper** from USPTO
 
-PatsPedsListProcessorTerm.py: 
-PatsPedsMultiTerm.py
-PatsPedsPublNoTreat.py
-PatsPedsTermDisc.py
+_PatsPedsListProcessorTerm.py_: A list processor which takes a xlsx-File containing 
+columns _"PN"_ with publication numbers (pre-grant or patent publication numbers),
+checks **for each publication** a term extension in days as well as the presence of 
+a terminal disclaimer, and writes the results to a new xlsx file. File management is done
+via file dialogs. 
 
-- Download latest version of claims available at the USPTO
-- Discriminate between US application numbers, publication number, and patent numbers
-- If wanted: save whole filewrapper
+_PatsPedsMultiTerm.py_: Simple helper function to _PatsPedsListProcessorTerm.py_, which takes 
+a list of publication numbers and invokes for each number _PatsPedsTermDisc.py_.
 
-*PatsPedsClaims.py*
-Takes an application Id
+_PatsPedsListProcessorTerm.py_: Actual modul using requests library to get for each publication number the according
+application Id and subsequently the term extension in days and the presence of a terminal disclaimer. Prior to
+requesting the application Id it treats each publication number with _PatsPedsPublNoTreat.py_ to get it in a correct 
+format for USPTO PEDS.
 
-*PatsPedsClaimsWrapper.py* 
-Takes  a pre-grant publication or patent number. Morover this script uses **PatsPedsClaims.py** in order to download the claims.
+_PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 
 
-*PatsPedsFileWrapper.py*
-Takes an application Id and downloads the whole filewrapper for the application. 
 
-*PatsPedsGUI.py*
-Is a very simple GUI for the tools.
 
 ![Alt text](./PatsPedsGUI.svg)
 
+svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
-April 24, 2021  
+
+April 25, 2021  
 
 (c) Vinz Frauchiger
