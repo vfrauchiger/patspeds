@@ -39,7 +39,7 @@ _PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
 
-##Usage ##
+## Usage ##
 Clone the repo or download all files to a directory of your choice. 
 Make sure you have Python and all dependencies installed (ref. below).
 Execute _PatPedsGUI.py_.
