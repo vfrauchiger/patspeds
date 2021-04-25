@@ -1,4 +1,4 @@
-## Description of PatsPedsTools (Wrapper) ##
+## Description of PatsPeds Toolset ##
 
 ### Functions ###
 
