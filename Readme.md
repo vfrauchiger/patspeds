@@ -43,7 +43,7 @@ svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas request
 Clone the repo or download all files to a directory of your choice. 
 Make sure you have Python and all dependencies installed (ref. below).
 Execute _PatPedsGUI.py_.
-Please not that this is an early incarnation of the toolset. It may contain bugs exhibit behavior which
+Please not that this is an early incarnation of the toolset. It may contain bugs and exhibit behavior which
 may not seem obvious. 
 
 Tested with `Python 3.9`
