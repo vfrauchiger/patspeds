@@ -36,7 +36,7 @@ Takes an application Id and downloads the whole filewrapper for the application.
 Is a very simple GUI for the tools.
 
 ![Alt text](./PatsPedsGUI.svg)
-<img src="./PatsPedsGUI.svg">
+
 
 April 24, 2021  
 
