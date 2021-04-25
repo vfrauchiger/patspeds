@@ -1,14 +1,17 @@
-import PySimpleGUI as sg 
+import PySimpleGUI as sg
+import pandas as pd
 
-import PatsPedsClaims as pdc 
-import PatsPedsClaimsWrapper as pdw 
-import PatsPedsFileWrapper as pdf 
+import PatsPedsClaims as pdc
+import PatsPedsClaimsWrapper as pdw
+import PatsPedsFileWrapper as pdf
+import PatsPedsListProcessorTerm as pdl
 
-sg.theme('Dark Red 2')
+sg.theme('Dark Blue 1')
 
 layout = [[sg.Text('Application ID'), sg.InputText(), sg.Button('Filewrapper (A)'), sg.Button('Latest Claims (A)')], \
             [sg.Text('Pre-Grant PublNo or Patent No'), sg.InputText(), sg.Button('Latest Claims (P)'), sg.Button('Get Term Extension (P)')], \
-            [ sg.Button('Exit'), sg.Text('(c) by Vinz Frauchiger, 2021')] ]
+            [sg.Button('Get Term Extension and Disclaimer for a List of Documents!')], \
+            [sg.Button('Exit'), sg.Text('(c) by Vinz Frauchiger, 2021')] ]
 
 window = sg.Window('PatsPedsGUIVersion', layout)
 
@@ -27,6 +30,13 @@ while True:
     elif event == 'Filewrapper (A)':
         print('Filewrapper (Appl Id)')
         print(pdf.get_filewrapper(str(values[0])))
+    elif event == 'Get Term Extension and Disclaimer for a List of Documents!':
+        filename = sg.popup_get_file("Get File for processing: ")
+        print(filename)
+        resultdf = pdl.list_processor(filename)
+        savename = sg.popup_get_file("Choose Location and Filename for Output!", default_extension='xlsx', save_as=True)
+        resultdf.to_excel(savename)
+        print('Done!')
     elif event == sg.WIN_CLOSED or event == 'Exit': # if user closes window or clicks cancel
         break
     print('You entered ', values)

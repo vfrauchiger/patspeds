@@ -4,11 +4,11 @@
 # Author: Vinz Frauchiger
 # License: Ypsomed exclusive
 
-import requests
 import json
 import os
 
-import PySimpleGUI as sg 
+import PySimpleGUI as sg
+import requests
 
 sg.theme('Dark Blue 2')
 

@@ -1,7 +1,9 @@
-import requests
 import json
 
+import requests
+
 from PatsPedsPublNoTreat import treat_publno
+
 
 def terms_and_disclaimer(no):
 

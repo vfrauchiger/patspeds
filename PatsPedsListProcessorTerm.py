@@ -1,6 +1,5 @@
+import PySimpleGUI as sg
 import pandas as pd
-
-import PySimpleGUI as sg 
 
 from PatsPedsMultiTerm import multi_term_disc
 

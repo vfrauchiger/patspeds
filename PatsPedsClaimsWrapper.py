@@ -6,11 +6,11 @@ Takes Publication Numbers.
 
 
 
-import requests
 import json
 
-import PatsPedsClaims as pdc
+import requests
 
+import PatsPedsClaims as pdc
 
 
 def get_appl(no, go_back='full'):
