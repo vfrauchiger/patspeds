@@ -16,7 +16,7 @@ disclaimer (True or False)
 _PatsPedsFileWrapper.py_: Takes an application ID and download the **full file wrapper** from USPTO
 
 _PatsPedsListProcessorTerm.py_: A list processor which takes a xlsx-File containing 
-columns _"PN"_ with publication numbers (pre-grant or patent publication numbers),
+a column called _"PN"_ with publication numbers (pre-grant or patent publication numbers),
 checks **for each publication** a term extension in days as well as the presence of 
 a terminal disclaimer, and writes the results to a new xlsx file. File management is done
 via file dialogs. 
