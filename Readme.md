@@ -39,6 +39,21 @@ _PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
 
+##Usage ##
+Clone the repo or download all files to a directory of your choice. 
+Make sure you have Python and all dependencies installed (ref. below).
+Execute _PatPedsGUI.py_.
+Please not that this is an early incarnation of the toolset. It may contain bugs exhibit behavior which
+may not seem obvious. 
+
+Tested with `Python 3.9`
+
+Dependencies: `Pandas, PySimpleGUI, Requests, and JSON` 
+
+Many _thanks_ to the authors/maintainers of these libraries and to the authors/maintainers of **Python**!
+
+
 April 25, 2021  
 
-(c) Vinz Frauchiger
+(c) 2021 Vinz Frauchiger, other rights may be applicable invoked by the use of Python and the dependencies.
+
