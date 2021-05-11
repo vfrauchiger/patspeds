@@ -1,5 +1,7 @@
 ## Description of PatsPeds Toolset ##
 
+*A friendly and small tool set to work with USPTO PEDS (API) System.*
+
 ### Functions ###
 
 _PatsPedsGUI.py_: **Top Level App with GUI** for *all* tools
