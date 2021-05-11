@@ -26,7 +26,7 @@ via file dialogs.
 _PatsPedsMultiTerm.py_: Simple helper function to _PatsPedsListProcessorTerm.py_, which takes 
 a list of publication numbers and invokes for each number _PatsPedsTermDisc.py_.
 
-_PatsPedsListProcessorTerm.py_: Actual modul using requests library to get for each publication number the according
+_PatsPedsListProcessorTerm.py_: Actual modul using requests library to get for each publication number (in a column called 'PN') the according
 application Id and subsequently the term extension in days and the presence of a terminal disclaimer. Prior to
 requesting the application Id it treats each publication number with _PatsPedsPublNoTreat.py_ to get it in a correct 
 format for USPTO PEDS.
