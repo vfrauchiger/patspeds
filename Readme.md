@@ -33,10 +33,7 @@ format for USPTO PEDS.
 
 _PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 
-
-
-
-![Alt text](./PatsPedsGUI.svg)
+![Schema](./PatsPedsGUI.svg)
 
 svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
