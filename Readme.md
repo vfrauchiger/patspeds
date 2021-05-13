@@ -1,4 +1,6 @@
-## Description of PatsPeds Toolset ##
+## PatsPeds Toolset ##
+
+A friendly toolset to access **USPTO** PEDS system.
 
 ### Functions ###
 
@@ -24,17 +26,17 @@ via file dialogs.
 _PatsPedsMultiTerm.py_: Simple helper function to _PatsPedsListProcessorTerm.py_, which takes 
 a list of publication numbers and invokes for each number _PatsPedsTermDisc.py_.
 
-_PatsPedsListProcessorTerm.py_: Actual modul using requests library to get for each publication number the according
-application Id and subsequently the term extension in days and the presence of a terminal disclaimer. Prior to
-requesting the application Id it treats each publication number with _PatsPedsPublNoTreat.py_ to get it in a correct 
-format for USPTO PEDS.
+_PatsPedsListProcessorTerm.py_: Actual modul using requests library to get for each publication number (in a column 
+called 'PN' of an Excel spreadsheet) the according application Id and subsequently the term extension in days and the 
+presence of a terminal disclaimer. Prior to requesting the application Id it treats each publication number with 
+_PatsPedsPublNoTreat.py_ to get it in a correct format for USPTO PEDS.
 
 _PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 
 
 
 
-![Alt text](./PatsPedsGUI.svg)
+![The file graph](./PatsPedsGUI.png)
 
 svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
