@@ -34,7 +34,7 @@ _PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 
 
 
-![Alt text](./PatsPedsGUI.svg)
+![Alt text](./PatsPedsGUI.png)
 
 svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
