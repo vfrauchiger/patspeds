@@ -37,7 +37,7 @@ _PatsPedsPublNoTreat.py_: helper function to get the number format correctly.
 
 
 ![The file graph](https://raw.githubusercontent.com/vfrauchiger/patspeds/main/PatsPedsGUI.svg)
-<img src="./PatsPedsGUI.svg">
+<img src="https://raw.githubusercontent.com/vfrauchiger/patspeds/main/PatsPedsGUI.svg">
 
 svg prepared using `pydeps PatsPedsGUI.py --max-bacon 5 --exclude pandas requests numpy`
 
