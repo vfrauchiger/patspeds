@@ -26,12 +26,14 @@ def get_claims(applId, publno="NoNo"):
     applId : 12123456
     """
     # URL needed
-    url_l = "https://ped.uspto.gov/api/queries/cms/"
+    url_l = "https://ped.uspto.gov/api/queries/cms/public/"
+    url_c = "https://ped.uspto.gov/api/queries/cms/"
 
     
     
     # get biblio for application
     r2 = requests.get(url_l+"/"+applId)
+    print(r2.text)
     resp_l = json.loads(r2.text)
     clm = [ doc for doc in resp_l if doc['documentCode']=='CLM']
 
@@ -46,7 +48,7 @@ def get_claims(applId, publno="NoNo"):
     #get the latest claims
     last_claims = [doc for doc in clm if doc['mailRoomDate']==max(dates)]
     print('\n...Thank you for waiting!')
-    r3 = requests.get(url_l + '/' + last_claims[0]['pdfUrl'])
+    r3 = requests.get(url_c + '/' + last_claims[0]['pdfUrl'])
     #save the claims to file
 
     if publno == "NoNo":
