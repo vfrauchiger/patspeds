@@ -39,7 +39,7 @@ def get_filewrapper(applId_tosearch):
     print(applId)
 
     # query the cms
-    r2 = requests.get(url_l+"/"+applId)
+    r2 = requests.get(url_l+"public/"+applId)
     #convert content of repsonse to dict
     resp_l = json.loads(r2.text)
 
